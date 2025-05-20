@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   game_manager.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/16 14:53:33 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/20 19:36:39 by mpena-zu         ###   ########.fr       */
+/*   Created: 2025/05/20 12:27:00 by mpena-zu          #+#    #+#             */
+/*   Updated: 2025/05/20 19:29:54 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# define BUFFER_SIZE 1000
-# include "../ft_printf/ft_printf.h"
-# include "../libft/libft.h"
-# include "../minilibx-linux/mlx.h"
-# include <fcntl.h>
+#include "so_long.h"
 
-char	**check_map(char *argv);
-char	*try_open(char *mapname);
-void	game_manager(char *argv);
-char	*get_next_line(int fd);
-void	is_validate(char **map);
-int		is_rectangular(char **map);
+void	is_validate(char **map)
+{
+	if (!is_rectangular(map))
+	{
+		ft_printf("Error: Map Format is invalid\n");
+		exit(EXIT_FAILURE);
+	}
+	ft_printf("Vamos bien\n");
+}
 
-#endif
+void	game_manager(char *argv)
+{
+	char	**map;
+
+	map = check_map(argv);
+	is_validate(map);
+}

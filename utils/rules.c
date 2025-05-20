@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   rules.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/16 14:53:33 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/20 19:36:39 by mpena-zu         ###   ########.fr       */
+/*   Created: 2025/05/20 18:58:46 by mpena-zu          #+#    #+#             */
+/*   Updated: 2025/05/20 19:36:14 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# define BUFFER_SIZE 1000
-# include "../ft_printf/ft_printf.h"
-# include "../libft/libft.h"
-# include "../minilibx-linux/mlx.h"
-# include <fcntl.h>
+#include "so_long.h"
 
-char	**check_map(char *argv);
-char	*try_open(char *mapname);
-void	game_manager(char *argv);
-char	*get_next_line(int fd);
-void	is_validate(char **map);
-int		is_rectangular(char **map);
+int	is_rectangular(char **map)
+{
+	size_t	i;
+	size_t	len;
 
-#endif
+	if (!map || !map[0])
+		return (0);
+	i = 1;
+	len = ft_strlen(map[0]);
+	while (map[i])
+	{
+		if (ft_strlen(map[i]) != len)
+			return (0);
+		i++;
+	}
+	return (1);
+}

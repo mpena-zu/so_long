@@ -8,7 +8,7 @@ AR = ar rcs
 
 RM = rm -rf
 
-LIBS = -Lminilibx -lmlx -lXext -lX11 -lm -lbsd
+LIBS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lbsd
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -16,7 +16,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 FT_PRINTF_DIR = ft_printf
 FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
-SOURCES = srcs/main.c
+SOURCES = srcs/main.c srcs/game_manager.c utils/rules.c utils/check_map.c utils/get_next_line.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
