@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:43:10 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/20 19:36:01 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/21 14:54:51 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ char	**read_map(char *filename)
 	line = get_next_line(fd);
 	while (line)
 	{
-		map[i] = line;
+		map[i] = ft_strtrim(line, "\n");
+		free(line);
 		i++;
 		line = get_next_line(fd);
 	}

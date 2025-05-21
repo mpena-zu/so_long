@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:53:33 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/20 19:36:39 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/21 14:51:52 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,10 @@ void	game_manager(char *argv);
 char	*get_next_line(int fd);
 void	is_validate(char **map);
 int		is_rectangular(char **map);
+int		it_has_walls(char **map);
+int		lateral_walls(char **map);
+int		has_all_elements(char **map);
+int		has_valid_elements(char **map);
+int		is_winnable(char **map);
 
 #endif

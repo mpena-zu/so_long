@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:27:00 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/20 19:29:54 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/21 14:54:31 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,26 @@ void	is_validate(char **map)
 		ft_printf("Error: Map Format is invalid\n");
 		exit(EXIT_FAILURE);
 	}
+	if (!it_has_walls(map))
+	{
+		ft_printf("Error: Map is not closed\n");
+		exit(EXIT_FAILURE);
+	}
+	if (!has_all_elements(map))
+	{
+		ft_printf("Error: Map must have 1 Player, 1 Exit and 1 Coin or more\n");
+		exit(EXIT_FAILURE);
+	}
+	if (!has_valid_elements(map))
+	{
+		ft_printf("Error: Invalid Characters\n");
+		exit(EXIT_FAILURE);
+	}
+	/*if (!is_winnable(map))
+	{
+		ft_printf("Error: Map is not winnable, GG FF15\n");
+		exit(EXIT_FAILURE);
+	}*/
 	ft_printf("Vamos bien\n");
 }
 
