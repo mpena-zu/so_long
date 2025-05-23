@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:53:33 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/21 14:51:52 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/23 14:12:52 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,11 @@ int		lateral_walls(char **map);
 int		has_all_elements(char **map);
 int		has_valid_elements(char **map);
 int		is_winnable(char **map);
+void	time_to_play(char **map);
+void	free_map(char **map);
+char	**copy_map(char **map);
+void	find_player(char **map, int *px, int *py);
+int		check_remaining(char **map);
+void	flood_fill(char **map, int x, int y);
 
 #endif

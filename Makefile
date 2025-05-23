@@ -16,7 +16,15 @@ LIBFT = $(LIBFT_DIR)/libft.a
 FT_PRINTF_DIR = ft_printf
 FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
-SOURCES = srcs/main.c srcs/game_manager.c utils/rules_map.c utils/rules_characters.c utils/check_map.c utils/get_next_line.c
+SOURCES = srcs/main.c \
+		srcs/game_manager.c \
+		utils/rules_map.c \
+		utils/rules_map2.c \
+		utils/rules_characters.c \
+		utils/check_map.c \
+		utils/get_next_line.c \
+		utils/utils.c \
+		utils/game.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

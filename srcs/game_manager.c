@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:27:00 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/21 14:54:31 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/23 14:32:33 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,11 @@ void	is_validate(char **map)
 		ft_printf("Error: Invalid Characters\n");
 		exit(EXIT_FAILURE);
 	}
-	/*if (!is_winnable(map))
+	if (!is_winnable(map))
 	{
 		ft_printf("Error: Map is not winnable, GG FF15\n");
 		exit(EXIT_FAILURE);
-	}*/
-	ft_printf("Vamos bien\n");
+	}
 }
 
 void	game_manager(char *argv)
@@ -48,4 +47,5 @@ void	game_manager(char *argv)
 
 	map = check_map(argv);
 	is_validate(map);
+	time_to_play(map);
 }

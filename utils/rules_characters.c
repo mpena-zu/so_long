@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:07:43 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/21 14:51:22 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/23 14:09:50 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,19 @@ int	has_valid_elements(char **map)
 	return (1);
 }
 
-int	is_winnable(char **map);
+int	is_winnable(char **map)
+{
+	char	**copy;
+	int		px;
+	int		py;
+	int		result;
+
+	copy = copy_map(map);
+	if (!copy)
+		return (0);
+	find_player(copy, &px, &py);
+	flood_fill(copy, px, py);
+	result = check_remaining(copy);
+	free_map(copy);
+	return (result);
+}
