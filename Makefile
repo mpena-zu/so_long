@@ -24,7 +24,8 @@ SOURCES = srcs/main.c \
 		utils/check_map.c \
 		utils/get_next_line.c \
 		utils/utils.c \
-		utils/game.c
+		utils/game.c \
+		utils/game_images.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
