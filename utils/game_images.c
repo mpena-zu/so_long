@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 13:03:40 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/27 15:58:45 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:02:33 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,19 @@
 
 void	load_images(t_game *game)
 {
-	int	win_width;
-	int	win_height;
+	int		width;
+	int		height;
+	void	*mlx;
 
-	game->img_player = mlx_xpm_file_to_image(game->mlx, "images/soldado.xpm", &win_width, &win_height);
+	mlx = game->mlx;
+	game->player = mlx_xpm_file_to_image(
+			mlx, "images/floor_tomate.xpm", &width, &height);
+	game->wall = mlx_xpm_file_to_image(
+			mlx, "images/wall.xpm", &width, &height);
+	game->floor = mlx_xpm_file_to_image(
+			mlx, "images/floor.xpm", &width, &height);
+	game->coin = mlx_xpm_file_to_image(
+			mlx, "images/coin.xpm", &width, &height);
+	game->exit = mlx_xpm_file_to_image(
+			mlx, "images/exit.xpm", &width, &height);
 }

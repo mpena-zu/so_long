@@ -25,7 +25,10 @@ SOURCES = srcs/main.c \
 		utils/get_next_line.c \
 		utils/utils.c \
 		utils/game.c \
-		utils/game_images.c
+		utils/game_images.c \
+		utils/use_image.c \
+		utils/keys.c \
+		utils/moves.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
