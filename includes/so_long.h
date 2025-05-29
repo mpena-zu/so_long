@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:53:33 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/28 16:49:47 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:29:47 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ void		move_left(t_game *game);
 void		move_right(t_game *game);
 void		init_game_data(t_game *game);
 void		start_game_loop(t_game *game);
+void		free_images(t_game *game);
+void		win_game(t_game *game);
 
 #endif

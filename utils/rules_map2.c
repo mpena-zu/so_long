@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 14:03:43 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/23 14:38:08 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/29 18:45:27 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ void	flood_fill(char **map, int x, int y)
 	if (map[y][x] != '0' && map[y][x] != 'C' && map[y][x] != 'E'
 		&& map[y][x] != 'P')
 		return ;
+	if (map[y][x] == 'E')
+	{
+		map[y][x] = 'F';
+		return ;
+	}
 	map[y][x] = 'F';
 	flood_fill(map, x + 1, y);
 	flood_fill(map, x - 1, y);

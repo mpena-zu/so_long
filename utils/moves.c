@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:29:19 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/28 16:56:13 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/29 17:30:44 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ void	move_up(t_game *game)
 		if (game->map[y][x] == 'C')
 			game->coins--;
 		if (game->map[y][x] == 'E' && game->coins == 0)
-		{
-			ft_printf("YOU WIN!!!!\n");
-			free_map(game->map);
-			exit(0);
-		}
+			win_game(game);
+		else if (game->map[y][x] == 'E')
+			return ;
 		game->map[game->player_y][game->player_x] = '0';
 		game->map[y][x] = 'P';
 		game->player_y = y;
@@ -50,11 +48,7 @@ void	move_down(t_game *game)
 		if (game->map[y][x] == 'C')
 			game->coins--;
 		if (game->map[y][x] == 'E' && game->coins == 0)
-		{
-			ft_printf("YOU WIN!!!!\n");
-			free_map(game->map);
-			exit(0);
-		}
+			win_game(game);
 		else if (game->map[y][x] == 'E')
 			return ;
 		game->map[game->player_y][game->player_x] = '0';
@@ -78,11 +72,7 @@ void	move_left(t_game *game)
 		if (game->map[y][x] == 'C')
 			game->coins--;
 		if (game->map[y][x] == 'E' && game->coins == 0)
-		{
-			ft_printf("YOU WIN!!!!\n");
-			free_map(game->map);
-			exit(0);
-		}
+			win_game(game);
 		else if (game->map[y][x] == 'E')
 			return ;
 		game->map[game->player_y][game->player_x] = '0';
@@ -106,11 +96,7 @@ void	move_right(t_game *game)
 		if (game->map[y][x] == 'C')
 			game->coins--;
 		if (game->map[y][x] == 'E' && game->coins == 0)
-		{
-			ft_printf("YOU WIN!!!!\n");
-			free_map(game->map);
-			exit(0);
-		}
+			win_game(game);
 		else if (game->map[y][x] == 'E')
 			return ;
 		game->map[game->player_y][game->player_x] = '0';
