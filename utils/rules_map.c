@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:58:46 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/05/29 17:03:23 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/05/30 13:26:53 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	is_rectangular(char **map)
 	while (map[i])
 	{
 		if (ft_strlen(map[i]) != len)
+		{
+			ft_printf("Error: Map Format is invalid\n");
 			return (0);
+		}
 		i++;
 	}
 	return (1);
